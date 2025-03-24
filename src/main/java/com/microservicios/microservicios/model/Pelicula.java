@@ -25,29 +25,5 @@ public class Pelicula {
         this.sinopsis = sinopsis;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public String getTitulo(){
-        return titulo;
-    }
-
-    public int getAnio(){
-        return anio;
-    }
-    
-    public String getDirector(){
-        return director;
-    }
-
-    public String getGenero(){
-        return genero;
-    }
-
-    public String getSinopsis(){
-        return sinopsis;
-    }
-
 
 }
