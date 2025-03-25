@@ -1,53 +1,48 @@
 package com.microservicios.microservicios.service;
-import org.springframework.stereotype.Service;
 
 import com.microservicios.microservicios.model.Pelicula;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.stereotype.Service;
+
 
 @Service
-
 public class PeliculaService {
-    private final List<Pelicula>  peliculas = new ArrayList<>();
+    private final List<Pelicula> peliculas = new ArrayList<>();
 
     public PeliculaService() {
-        peliculas.add(new Pelicula(1, "Interestellar", 2014, "Christopher Nolan", "Ciencia Ficción", "Exploración del espacio y el tiempo."));
-        peliculas.add(new Pelicula(2, "Inception", 2010, "Christopher Nolan", "Ciencia Ficción", "Un ladrón con la habilidad de entrar en los sueños de otros."));
-        peliculas.add(new Pelicula(3, "El Padrino", 1972, "Francis Ford Coppola", "Crimen", "Historia de la familia Corleone y el mundo de la mafia."));
-        peliculas.add(new Pelicula(4, "Pulp Fiction", 1994, "Quentin Tarantino", "Crimen", "Historias entrelazadas de criminales en Los Ángeles."));
-        peliculas.add(new Pelicula(5, "Forrest Gump", 1994, "Robert Zemeckis", "Drama", "La vida de un hombre con un coeficiente intelectual bajo y su impacto en la historia."));
-        peliculas.add(new Pelicula(6, "Matrix", 1999, "Lana y Lilly Wachowski", "Ciencia Ficción", "Un hacker descubre la verdadera naturaleza de su realidad."));
-        peliculas.add(new Pelicula(7, "Gladiador", 2000, "Ridley Scott", "Acción", "Un general romano traicionado busca venganza en la arena."));
-        peliculas.add(new Pelicula(8, "Titanic", 1997, "James Cameron", "Drama", "Una historia de amor en el fatídico viaje del Titanic."));
-        peliculas.add(new Pelicula(9, "El Señor de los Anillos: El Retorno del Rey", 2003, "Peter Jackson", "Fantasía", "El desenlace épico de la lucha por la Tierra Media."));
-        peliculas.add(new Pelicula(10, "Joker", 2019, "Todd Phillips", "Drama", "La transformación de Arthur Fleck en el icónico villano de Gotham."));
-        peliculas.add(new Pelicula(11, "Los Vengadores", 2012, "Joss Whedon", "Acción", "Un grupo de superhéroes se une para salvar el mundo."));
-        peliculas.add(new Pelicula(12, "Toy Story", 1995, "John Lasseter", "Animación", "Las aventuras de Woody y Buzz Lightyear en el mundo de los juguetes."));
-        peliculas.add(new Pelicula(13, "Avatar", 2009, "James Cameron", "Ciencia Ficción", "Un exmarine se involucra con los nativos de Pandora."));
-        peliculas.add(new Pelicula(14, "El Rey León", 1994, "Roger Allers, Rob Minkoff", "Animación", "La historia de Simba y su camino a convertirse en rey."));
-        peliculas.add(new Pelicula(15, "Harry Potter y la Piedra Filosofal", 2001, "Chris Columbus", "Fantasía", "El inicio de las aventuras del joven mago Harry Potter."));
-        peliculas.add(new Pelicula(16, "El Exorcista", 1973, "William Friedkin", "Terror", "Una niña es poseída por un demonio y un sacerdote intenta salvarla."));
-        peliculas.add(new Pelicula(17, "El Viaje de Chihiro", 2001, "Hayao Miyazaki", "Animación", "Una niña entra en un mundo mágico y debe encontrar el camino de regreso."));
-        peliculas.add(new Pelicula(18, "Parásitos", 2019, "Bong Joon-ho", "Drama", "Una familia pobre se infiltra en la vida de una familia adinerada."));
-        peliculas.add(new Pelicula(19, "It", 2017, "Andy Muschietti", "Terror", "Un grupo de niños enfrenta a un aterrador payaso llamado Pennywise."));
-        peliculas.add(new Pelicula(20, "Rápidos y Furiosos", 2001, "Rob Cohen", "Acción", "Carreras ilegales y robos a alta velocidad en Los Ángeles."));
+        peliculas.add(new Pelicula(1L, "Blade Runner 2049", 2017, "Denis Villeneuve", "Ciencia Ficción", "Un oficial de policía descubre un secreto que podría cambiar el destino de la humanidad."));
+        peliculas.add(new Pelicula(2L, "La La Land", 2016, "Damien Chazelle", "Musical", "Un pianista de jazz y una actriz persiguen sus sueños en Los Ángeles."));
+        peliculas.add(new Pelicula(3L, "Whiplash", 2014, "Damien Chazelle", "Drama", "Un joven baterista lucha contra un exigente instructor de música."));
+        peliculas.add(new Pelicula(4L, "El Cisne Negro", 2010, "Darren Aronofsky", "Thriller", "Una bailarina de ballet enfrenta la presión de su papel estelar."));
+        peliculas.add(new Pelicula(5L, "Mad Max: Furia en el Camino", 2015, "George Miller", "Acción", "En un mundo postapocalíptico, un grupo huye del tirano Immortan Joe."));
+        peliculas.add(new Pelicula(6L, "El Laberinto del Fauno", 2006, "Guillermo del Toro", "Fantasía", "Una niña descubre un mundo mágico en la España franquista."));
+        peliculas.add(new Pelicula(7L, "Parásitos", 2019, "Bong Joon-ho", "Drama", "Una familia pobre se infiltra en la vida de una familia rica."));
+        peliculas.add(new Pelicula(8L, "Amelie", 2001, "Jean-Pierre Jeunet", "Comedia", "Una joven parisina decide mejorar la vida de quienes la rodean."));
+        peliculas.add(new Pelicula(9L, "El Castillo Ambulante", 2004, "Hayao Miyazaki", "Animación", "Una joven hechizada se aventura en el castillo de un mago errante."));
+        peliculas.add(new Pelicula(10L, "Ratatouille", 2007, "Brad Bird", "Animación", "Una rata con talento culinario busca convertirse en chef en París."));
+        peliculas.add(new Pelicula(11L, "La Lista de Schindler", 1993, "Steven Spielberg", "Drama", "Un empresario alemán salva a cientos de judíos durante el Holocausto."));
+        peliculas.add(new Pelicula(12L, "No Country for Old Men", 2007, "Hermanos Coen", "Thriller", "Un hombre encuentra un maletín con dinero y es perseguido por un asesino."));
+        peliculas.add(new Pelicula(13L, "El Gran Lebowski", 1998, "Hermanos Coen", "Comedia", "Un hombre apodado 'The Dude' se ve envuelto en un enredo criminal."));
+        peliculas.add(new Pelicula(14L, "Interiores", 1978, "Woody Allen", "Drama", "La crisis de una familia tras la separación de los padres."));
+        peliculas.add(new Pelicula(15L, "El Irlandés", 2019, "Martin Scorsese", "Crimen", "Un asesino a sueldo recuerda su vida en la mafia."));
+        peliculas.add(new Pelicula(16L, "Casino", 1995, "Martin Scorsese", "Crimen", "La historia de la mafia en Las Vegas."));
+        peliculas.add(new Pelicula(17L, "Los Infiltrados", 2006, "Martin Scorsese", "Thriller", "Un policía encubierto y un informante de la mafia en Boston."));
+        peliculas.add(new Pelicula(18L, "Scarface", 1983, "Brian De Palma", "Crimen", "La brutal ascensión de un inmigrante cubano en el mundo del narcotráfico."));
+        peliculas.add(new Pelicula(19L, "Oldboy", 2003, "Park Chan-wook", "Thriller", "Un hombre busca venganza tras haber sido encarcelado por 15 años sin razón."));
+        peliculas.add(new Pelicula(20L, "The Social Network", 2010, "David Fincher", "Drama", "La historia de la creación de Facebook y sus conflictos legales."));
     }
+    
 
-    public List <Pelicula> todasPeliculas(){
+    public List<Pelicula> obtenerTodas(){
         return peliculas;
     }
 
-    
-    public Optional<Pelicula> peliculaPorId(int id) {
+    public Optional<Pelicula> obtenerPorId(Long id){
         return peliculas.stream()
-            .filter(p -> p.getId() == id) 
-            .findFirst();
+        .filter(p->p.getId().equals(id))
+        .findFirst();
     }
-    
-    
-    
 }
-    
-
-
